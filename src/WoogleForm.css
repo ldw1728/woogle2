@@ -1,0 +1,17 @@
+.WoogleForm{
+    padding: 10px;
+    position: fixed;
+    left: 75%;
+    top: 75%;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 4px 4px 2px gray;
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+.WoogleForm:hover{
+    opacity: 1;
+}
+
+
