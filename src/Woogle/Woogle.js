@@ -7,7 +7,7 @@ import './Woogle.css';
 export default function Woogle(props){
 
     const handleBtnClick = (event) =>{
-        if(props.name === 'URLWoogles'){
+        if(props.woogle.woogle === 'URLWoogles'){
             window.open(props.woogle.contents, '_blank');
         }else{
             props.showDetail(props.woogle, event.pageX, event.pageY);
@@ -16,20 +16,25 @@ export default function Woogle(props){
 
     return (
         <span className="woogle">
-            <Button variant="contained" 
+            <div className="woogleTitle">
+            <Button  variant="outlined" 
                     onClick={handleBtnClick}
-                    className="woogleContent">
+                    >
                         {
-                            props.name === 'URLWoogles' && 
+                            props.woogle.woogle === 'URLWoogles' && 
                             <img className="favicon" src={"http://www.google.com/s2/favicons?domain=" + props.woogle.contents} 
                             alt="favicon"></img>
                         }
                         
-                        {props.woogle.title}
-                        </Button>
-            <IconButton aria-label="delete" onClick={props.deleteWoogle} size="small">
-            <DeleteIcon />
-            </IconButton>
+                        <span className="font_woogleTitle">{props.woogle.title}</span>
+            </Button>
+            </div>
+            <div className="iconBtn">
+                <IconButton  aria-label="delete" onClick={props.deleteWoogle} size="small">
+                <DeleteIcon />
+                </IconButton>
+            </div>
+            
         </span>
     );
 }

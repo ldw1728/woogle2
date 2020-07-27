@@ -1,7 +1,7 @@
 .WoogleForm{
     padding: 10px;
     position: fixed;
-    left: 75%;
+    left: 43%;
     top: 75%;
     background-color: white;
     border-radius: 5px 5px 5px 5px;
@@ -12,6 +12,19 @@
 }
 .WoogleForm:hover{
     opacity: 1;
+}
+
+.titleField{
+    margin: 5px;
+}
+
+.contentsField{
+    margin: 5px;
+}
+
+.Buttons{
+    margin: 5px;
+    float: right;
 }
 
 

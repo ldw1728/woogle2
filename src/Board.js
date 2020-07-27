@@ -1,13 +1,13 @@
 import React from 'react';
-import Time from './Time';
+import Time from './UtilComponents/Time';
 import './Board.css';
-import SearchBar from './SearchBar';
+import SearchBar from './UtilComponents/SearchBar';
 import Add from './Add';
-import Woogle from './Woogle';
-import WoogleDetail from './WoogleDetail'
+import Woogle from './Woogle/Woogle';
+import WoogleDetail from './Woogle/WoogleDetail'
+import WeatherComp from './UtilComponents/WeatherComp'
 
 class Board extends React.Component{
-
 
   constructor(props){
     super(props);
@@ -19,17 +19,15 @@ class Board extends React.Component{
           y: 0
       },
     }
-    
   }
   
-    renderWoogles(i, woogle, name){
+    renderWoogles(woogle){
         return (
-            <Woogle key={i}
+            <Woogle key={woogle.id}
             className="woogle"
-            name={name}
             woogle={woogle}
             showDetail={(pwoogle,x,y)=>this.showDetail(pwoogle,x,y)}
-            deleteWoogle={()=>this.props.deleteWoogle(i,name)}
+            deleteWoogle={()=>this.props.deleteWoogle(woogle)}
             />        
         );
     }
@@ -49,11 +47,11 @@ class Board extends React.Component{
     render(){
       
         const toDoList = this.props.toDoWoogles.map((woogle,i)=>(
-                this.renderWoogles(i, woogle, 'toDoWoogles')       
+                this.renderWoogles(woogle)       
         ));
 
         const URLWoogles = this.props.URLWoogles.map((woogle,i)=>(
-                this.renderWoogles(i, woogle, 'URLWoogles')     
+                this.renderWoogles(woogle)     
     ));
 
         return(
@@ -66,34 +64,30 @@ class Board extends React.Component{
               }
               </span>
               
-                <div className="leftWoogles">
-                <span className="toDoWoogles">
+              <div className="leftWoogles">            
                     {toDoList}
-              </span>
               </div>
 
               <div className="middleComp">
               <div className="Time">
-         <Time/>
-        </div>
-        <div className="SearchBarGroup">
-             <SearchBar site="g"/>
-             <SearchBar site="n"/>
-             <SearchBar site="y"/>
-        </div>
+                <Time className="TimeConp"/>
+              </div>
+                <WeatherComp className="WeatherComp" wdata={this.props.wdata}/>
+              <div className="SearchBarGroup">
+                <SearchBar site="g"/>
+                <SearchBar site="n"/>
+                <SearchBar site="y"/>
+              </div>
               </div>
 
               <div className="rightWoogles">
-              <span className="URLWoogles">
                     {URLWoogles}
-              </span>
               </div>
-            
-        
-           <span className="add">
-             <Add addWoogle={(title, contents, selectedName)=>this.props.addWoogle(title, contents,selectedName)}/>
-           </span>
-          
+
+              <span className="add">
+                <Add addWoogle={(title, contents, selectedName)=>this.props.addWoogle(title, contents,selectedName)}/>
+              </span>
+
         </div>
         );
     }

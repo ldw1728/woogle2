@@ -1,0 +1,38 @@
+.woogle{
+    position: relative;
+    padding : 10px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 2px 1px 1px dimgray;
+    margin: 3px;
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+.woogle:hover{
+    box-shadow: 2px 2px 4px 2px dimgray;
+    opacity: 1;
+}
+
+.favicon{
+    margin: 5px;
+}
+
+.woogleTitle{
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.woogleTitle:hover{
+    box-shadow: 1px 1px 2px dimgray;
+    background-color: bisque;
+}
+.iconBtn{
+    display: inline-block;
+}
+
+.font_woogleTitle{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}

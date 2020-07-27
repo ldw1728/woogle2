@@ -1,0 +1,29 @@
+.WeatherCompDiv{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 15%;
+    margin-top: 5%;
+}
+
+#WeatherCompImg{
+    opacity: 1;
+    transition: opacity 0.5s;
+    
+}
+#WeatherCompImgDiv{
+    width: 140px;
+    height: 140px;
+}
+
+.WeatherCompTemp{
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 1px 2px black;
+    left:45%;
+    top:30%;
+    
+}

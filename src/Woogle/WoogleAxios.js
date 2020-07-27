@@ -32,4 +32,10 @@ import axios from 'axios';
         });
     };
 
+    export function getWeatherJSON(url, callback){
+        axios.get(url).then(response=>{
+            callback(response.data);
+        });
+    };
+
 

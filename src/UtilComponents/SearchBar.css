@@ -10,7 +10,7 @@
     padding: 10px;
     margin-bottom: 5%;
     border-radius: 5px;
-    box-shadow: 1px 3px 3px 3px gray;
+    box-shadow: 1px 2px 1px 1px dimgray;
     background-color: #fbe6d4;
     /*left: 36%;*/
     opacity:0.6;
@@ -19,7 +19,7 @@
 }
 
 .SearchBar:hover{
-    box-shadow: 2px 6px 6px 4px gray;
+    box-shadow: 2px 2px 4px 2px dimgray;
     opacity:1;
 }
 

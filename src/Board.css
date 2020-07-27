@@ -10,24 +10,24 @@
     display: inline-block;
     left: 30%;
     height: 100%;
-    width: 30%;
+    width: 40%;
 }
-
 
 .Time {
     margin-top: 10%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 4vw;
     color: white;
     text-align: center;
-    text-shadow: 5px 2px 2px black;
+    text-shadow: 2px 1px 2px black;
 }
+
 .SearchBarGroup{
     width: fit-content;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
 }
 
 img {
@@ -37,40 +37,39 @@ img {
 
 .add{
     position: fixed;
-    left: 90%;
-    top: 90%;
-}
-
-.woogles{
     width: 100%;
-    height: 100%;
-    display: inline-block;
+    text-align: center;
+    left: 0%;
+    top: 92%;
 }
 
 .leftWoogles{
+    text-align: center;
     width: 30%;
     float: left;
     height: 100%;
 }
 .rightWoogles{
+    text-align: center;
     width: 30%;
     float: right;
     height: 100%;
 }
 
-.URLWoogles > span{
+.leftWoogles > span{
     background-color: #ffa931;
 }
 
-.toDoWoogles > span{
+.rightWoogles > span{
     background-color: #fecb89;
 }
 
 #detailCard{
     position: absolute;
     z-index: 1;
-    opacity: 0.7;
-    transition: opacity 0.5s;
+    box-shadow: 3px 3px 7px 0px dimgray;
+    opacity: 0.8;
+    transition: opacity 0.3s;
     
 }
 

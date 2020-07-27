@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
+import './WoogleDetail.css';
 
 const useStyles = makeStyles({
   root: {
@@ -32,19 +33,21 @@ export default function WoogleDetail(props) {
   detailCard.style.top = props.detailComp.y+"px";
   
   return (
-      
-    <Card id="detailCard" className={classes.root} >
+          <Card id="detailCard" className={classes.root} >
       <CardContent>
         <Typography variant="h5" component="h2">
             {props.detailComp.woogle.title}
         </Typography>
+        <br></br>
         <Typography variant="body2" component="p">
           {props.detailComp.woogle.contents}
         </Typography>
       </CardContent>
+      <span className="detailCardBtn">
       <CardActions>
-        <Button className="detailCardBtn"size="small" onClick={props.showDetail}><CancelPresentationIcon/></Button>
+        <Button size="small" onClick={props.showDetail}><CancelPresentationIcon/></Button>
       </CardActions>
+      </span>  
     </Card>
   );
 }

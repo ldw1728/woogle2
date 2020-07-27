@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import WoogleForm from './WoogleForm';
+import WoogleForm from './Woogle/WoogleForm';
 
 
 const options = ['AddURI', 'AddToDo'];
