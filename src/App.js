@@ -11,12 +11,7 @@ class App extends React.Component {
     this.state = {
       toDoWoogles: [],
       URLWoogles: [],
-      wdata: {
-        weather: '',
-        weatherImgCode: '',
-        celsius: 0,
-
-      }
+      wdata: '',
     };
 
     this.addWoogle = this.addWoogle.bind(this);
@@ -26,30 +21,11 @@ class App extends React.Component {
    loadWeatherJSON = () =>{
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&appid=ff737b74d85df9939ff990b7dc8c82bb';
     WoogleAxios.getWeatherJSON(url, data=>{
-      var celsius = Math.floor((data.main.humidity - 32) * 5 / 9);
-      var weather = data.weather[0].main;
       
       this.setState({
-        wdata:{
-          weather: weather,
-          weatherImgCode: this.weatherToImgCode(weather),
-          celsius: celsius,
-        }
+        wdata:data,
       });
     });
-  }
-
-  weatherToImgCode = (weather) =>{
-    switch(weather){
-      case 'Clear': return '01d';
-      case 'Clouds' : return '02d';
-      case 'Atmosphere' : return '50d';
-      case 'Snow' : return '13d';
-      case 'Rain' : return '10d';
-      case 'Drizzle' : return '09d';
-      case 'Thunderstorm' : return '11d';
-      default : return '01d';
-    }
   }
 
   addWoogle = (title, contents, selectedName) => {
