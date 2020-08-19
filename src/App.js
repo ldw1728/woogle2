@@ -15,13 +15,38 @@ class App extends React.Component {
     };
 
     this.addWoogle = this.addWoogle.bind(this);
-    this.loadWeatherJSON()
+    this.loadWeather();
   }
 
-   loadWeatherJSON = () =>{
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&appid=ff737b74d85df9939ff990b7dc8c82bb';
+   loadWeather = () =>{
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((position)=>{
+        this.getWeatherData(position);
+       },
+       (error)=>{
+        console.log(error.message);
+        alert('사용자의 위치를 알 수 없습니다.');
+        this.getWeatherData();
+       });
+    }else{
+      this.getWeatherData();
+    }
+  }
+
+  getWeatherData = (position) => {
+    var url='';
+    if(position !== undefined){
+       url = 'http://api.openweathermap.org/data/2.5/weather?'
+        + 'lat='
+        + position.coords.latitude
+        + '&lon='
+        + position.coords.longitude
+        + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
+    }else{
+      url = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr'
+    + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
+    }
     WoogleAxios.getWeatherJSON(url, data=>{
-      
       this.setState({
         wdata:data,
       });
@@ -34,32 +59,16 @@ class App extends React.Component {
       contents: contents,
       woogle: selectedName,
     };
-    WoogleAxios.sendWoogleAxios('/woogle', 'post', woogle, this.saveCallback);
+    WoogleAxios.sendWoogleAxios('/woogle', 'post', woogle, this.getCallback);
     
   }
 
   deleteWoogle = (woogle) =>{
     const woogles = new Function('return this.state.'+woogle.woogle+';').bind(this).apply();
-    WoogleAxios.sendWoogleAxios('/woogle', 'delete', woogles[woogles.indexOf(woogle)]  , this.deleteCallback);
+    WoogleAxios.sendWoogleAxios('/woogle', 'delete', woogles[woogles.indexOf(woogle)], this.getCallback);
       
   }
-
-  saveCallback = (data) => {
-    const woogles = new Function('return this.state.'+data.woogle+';').bind(this).apply();
-    this.setState({
-      [data.woogle]: woogles.concat(data),
-    });
-  }
-
-  deleteCallback = (data) => {
-    const woogles = new Function('return this.state.'+data.woogle+';').bind(this).apply();
-    const deletedItem = woogles.find((element)=>{return element.id === data.id});
-    woogles.splice(woogles.indexOf(deletedItem),1);
-      this.setState({
-        [data.woogle]: woogles,
-      }); 
-  }
-
+  
   getCallback = (data) =>{
     this.setState({
       toDoWoogles: data.filter(e=> e.woogle === 'toDoWoogles'),

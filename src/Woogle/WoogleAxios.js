@@ -2,10 +2,11 @@ import axios from 'axios';
 
     export function getWooglesAxios(url, callback){
         axios(
-            {
+            {   
+                
                 url: '/woogle' + url,
                 method: 'get',
-                baseURL: 'http://localhost:8080',
+                baseURL: 'http://13.209.44.126:9000',
                 withCredentials: true
             }
         ).then(response=>{
@@ -23,7 +24,7 @@ import axios from 'axios';
                 url: '/woogle' + url,
                 method: method,
                 data: JSON.stringify(woogle),
-                baseURL: 'http://localhost:8080',
+                baseURL: 'http://13.209.44.126:9000',
                 withCredentials: true
             }
         ).then(response=>{

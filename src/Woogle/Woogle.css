@@ -30,9 +30,13 @@
 }
 .iconBtn{
     display: inline-block;
+    width:22px;
+    height: fit-content;
+    
 }
 
 .font_woogleTitle{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
+    font-size: 1.2vw;
 }

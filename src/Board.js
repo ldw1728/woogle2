@@ -73,13 +73,11 @@ class Board extends React.Component{
                 <Time className="TimeConp"/>
               </div>
               {
-                this.props.wdata != '' && <WeatherComp className="WeatherComp" wdata={this.props.wdata}/>
+                this.props.wdata !== '' && <WeatherComp className="WeatherComp" wdata={this.props.wdata}/>
               }
                 
               <div className="SearchBarGroup">
-                <SearchBar site="g"/>
-                <SearchBar site="n"/>
-                <SearchBar site="y"/>
+                <SearchBar/>
               </div>
               </div>
 

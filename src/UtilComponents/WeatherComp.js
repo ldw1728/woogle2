@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './WeatherComp.css';
 
 export default function WeatherComp(props){
@@ -8,8 +8,12 @@ export default function WeatherComp(props){
         <div className="WeatherCompDiv">
             <div id="WeatherCompImg">
             <img id="WeatherCompImgDiv" src={src} title={props.wdata.weather[0].main} alt={props.wdata.weather[0].main}></img>
-             <span className="WeatherCompTemp">{Math.floor(props.wdata.main.temp-273.15)}°C</span>
-             </div>
+            </div>
+             <span className="WeatherCompTemp">
+             <span>{props.wdata.sys.country}, {props.wdata.name}, </span>
+                 {Math.floor(props.wdata.main.temp-273.15)}°C
+                 </span>
+             
         </div>
     );
 }

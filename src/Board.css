@@ -5,7 +5,8 @@
 }
 
 .middleComp{
-    position: absolute;
+    position: fixed;
+    
    width: fit-content;
     display: inline-block;
     left: 30%;
@@ -21,13 +22,12 @@
     color: white;
     text-align: center;
     text-shadow: 2px 1px 2px black;
+    
 }
 
 .SearchBarGroup{
-    width: fit-content;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 10%;
+   width: fit-content;
+
 }
 
 img {

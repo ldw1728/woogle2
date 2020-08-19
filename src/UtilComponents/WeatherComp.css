@@ -1,15 +1,15 @@
 .WeatherCompDiv{
     position: relative;
-    text-align: center;
-    width: 100%;
-    height: 15%;
+   
+    
+    height: 20%;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #WeatherCompImg{
-    opacity: 1;
-    transition: opacity 0.5s;
-    
+   text-align: center;
+   
 }
 #WeatherCompImgDiv{
     width: 140px;
@@ -23,7 +23,12 @@
     font-size: 20px;
     color: white;
     text-shadow: 2px 1px 2px black;
-    left:45%;
-    top:30%;
+    font-size: 2vw;
+    left: 50%;
+    position: relative;
+}
+
+.WeatherCompTemp > span {
     
+    font-size: 1.2vh;
 }
