@@ -1,35 +1,57 @@
 import axios from 'axios';
 
-    export function getWooglesAxios(url, callback){
+    export function sendUserInfo(url, email, password, callback, errorCallback){
+        axios({
+            headers : {
+                'Content-Type': 'application/json',
+            },
+            url : '/woogle'+url,
+            method : 'post',
+            baseURL : 'http://13.209.44.126:9000',
+            data : JSON.stringify({email:email, password:password,}),
+        }
+        ).then(response=>{
+            callback(response.data);   
+        }).catch(error=>{
+            errorCallback(error);
+        });
+    }
+
+    export function getWooglesAxios(url, token, callback, errorCallback){
         axios(
             {   
-                
-                url: '/woogle' + url,
+                headers : {
+                    'x-auth-token' : token,
+                },
+                url: '/woogle/user' + url,
                 method: 'get',
                 baseURL: 'http://13.209.44.126:9000',
                 withCredentials: true
             }
         ).then(response=>{
-            console.log(response.data);
             callback(response.data);
+        }).catch(error=>{
+            errorCallback(error);
         });
     };
 
-    export function sendWoogleAxios(url,method,woogle, callback){
+    export function sendWoogleAxios(url,method,woogle,token, callback, errorCallback){
         axios(
             {   
                 headers: {
+                    'x-auth-token' : token,
                     'Content-Type': 'application/json'
                 },
-                url: '/woogle' + url,
+                url: '/woogle/user' + url,
                 method: method,
                 data: JSON.stringify(woogle),
                 baseURL: 'http://13.209.44.126:9000',
                 withCredentials: true
             }
         ).then(response=>{
-            console.log(response.data);
             callback(response.data);
+        }).catch(error=>{
+            errorCallback(error);
         });
     };
 

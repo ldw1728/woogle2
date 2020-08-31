@@ -1,0 +1,36 @@
+.login{
+    
+    position: relative;
+    width: 30vmin;
+    top: 35%;
+    left:-5%;
+    margin:0 auto;
+    padding: 20px;
+}
+
+#login-form{
+    width: fit-content;
+    
+}
+
+.textField-email{
+    width: 30vmin;
+   
+}
+
+.textField-password{
+    width: 30vmin;
+}
+
+.btnGroup{
+    position: absolute;
+    left: 19%;
+   width: 30vw;
+   
+}
+
+.MuiButtonGroup-root > .signIn {
+    width: 3.9vw;
+    font-size: 0.7vw;
+    font-weight: bolder;
+}

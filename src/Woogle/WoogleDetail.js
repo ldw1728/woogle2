@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 export default function WoogleDetail(props) {
   const classes = useStyles();
   const detailCard = document.getElementById('detailCard');
-  console.log( props.detailComp.x);
+  
   detailCard.style.left = props.detailComp.x+"px";
   detailCard.style.top = props.detailComp.y+"px";
   

@@ -12,9 +12,9 @@ import MenuList from '@material-ui/core/MenuList';
 import WoogleForm from './Woogle/WoogleForm';
 
 
-const options = ['AddURI', 'AddToDo'];
+const options = ['AddURI', 'AddToDo', 'Logout'];
 
-export default function Add(props) {
+function Add(props) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -22,10 +22,17 @@ export default function Add(props) {
   const [selectedName, setSelectedName] = React.useState('toDoWoogles');
 
   const handleClick = () => {
-        setIsWoogleForm(!isWoogleForm);
-    if(selectedIndex === 0)
-        setSelectedName('URLWoogles');
-        else setSelectedName('toDoWoogles');
+
+    if(selectedIndex === 2){
+      props.setLogin();
+    }else{
+      setIsWoogleForm(!isWoogleForm);
+      if(selectedIndex === 0)
+          setSelectedName('URLWoogles');
+      else if(selectedIndex === 1){
+        setSelectedName('toDoWoogles')
+      }
+    }
   };
  
   const handleMenuItemClick = (event, index) => {
@@ -84,7 +91,7 @@ export default function Add(props) {
                     {options.map((option, index) => (
                       <MenuItem
                         key={option}
-                        disabled={index === 2}
+                        disabled={index === 3}
                         selected={index === selectedIndex}
                         onClick={(event) => handleMenuItemClick(event, index)}
                       >
@@ -102,3 +109,5 @@ export default function Add(props) {
     </span>
   );
 }
+
+export default React.memo(Add);

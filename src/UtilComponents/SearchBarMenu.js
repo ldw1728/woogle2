@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -17,7 +17,6 @@ const srcs = [
 
 export default function SearchBarMenu(props) {
   const options = srcs.map(e => e.name);
-  const selectedSrc = srcs[0];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -34,6 +33,7 @@ export default function SearchBarMenu(props) {
   return (
     <span className="SearchBarMenu">
       <IconButton
+        className='iconBtn'
         aria-label="more"
         aria-controls="long-menu"
         aria-haspopup="true"

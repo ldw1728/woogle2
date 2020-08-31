@@ -1,5 +1,6 @@
 .WoogleForm{
     padding: 10px;
+    padding-right: 30px;
     position: fixed;
     left: 43%;
     top: 75%;
@@ -15,10 +16,21 @@
 }
 
 .titleField{
+    width: fit-content;
+    height: fit-content;
     margin: 5px;
+     min-width: 100px;
+}
+.title{
+   width: 15vmax;
+}
+.contents{
+    width: 15vmax;
 }
 
 .contentsField{
+    width: fit-content;
+    height: fit-content;
     margin: 5px;
 }
 
@@ -26,5 +38,7 @@
     margin: 5px;
     float: right;
 }
+
+
 
 

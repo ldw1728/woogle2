@@ -38,10 +38,10 @@ class WoogleForm extends React.Component{
     render(){
         return(
             <span className="WoogleForm">
-                <form onSubmit={this.handleSubmit}>
-                    <div  className="titleField">
+                <form className='woogleForm' onSubmit={this.handleSubmit}>
+                    <div className="titleField">
                     <TextField 
-                        className="titleField"
+                        className="title"
                         name="title" 
                         label="Title" 
                         variant="outlined" 
@@ -54,6 +54,7 @@ class WoogleForm extends React.Component{
                 
                     <div className="contentsField">
                     <TextField 
+                        className="contents"
                         name="contents" 
                         label="Contents" 
                         variant="outlined" 

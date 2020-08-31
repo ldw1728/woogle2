@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import SearchBarMenu, {initSrc} from './SearchBarMenu';
+import SearchBarMenu from './SearchBarMenu';
 import './SearchBar.css'
 
 
@@ -68,4 +68,4 @@ class SearchBar extends React.Component{
     }
 }
 
-export default SearchBar;
+export default React.memo(SearchBar);

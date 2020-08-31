@@ -1,7 +1,15 @@
 import React from 'react';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Board from './Board.js';
 import './App.css';
 import * as WoogleAxios from './Woogle/WoogleAxios';
+import Login from './Auth/Login';
+import * as Cookie from './Cookie';
 
 
 class App extends React.Component {
@@ -9,12 +17,9 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      toDoWoogles: [],
-      URLWoogles: [],
+      isLogin : Cookie.getCookie('token') !== null ? true : false,
       wdata: '',
     };
-
-    this.addWoogle = this.addWoogle.bind(this);
     this.loadWeather();
   }
 
@@ -53,44 +58,53 @@ class App extends React.Component {
     });
   }
 
-  addWoogle = (title, contents, selectedName) => {
-    const woogle = {
-      title: title,
-      contents: contents,
-      woogle: selectedName,
-    };
-    WoogleAxios.sendWoogleAxios('/woogle', 'post', woogle, this.getCallback);
-    
-  }
-
-  deleteWoogle = (woogle) =>{
-    const woogles = new Function('return this.state.'+woogle.woogle+';').bind(this).apply();
-    WoogleAxios.sendWoogleAxios('/woogle', 'delete', woogles[woogles.indexOf(woogle)], this.getCallback);
-      
-  }
-  
-  getCallback = (data) =>{
+  setLogin = () => {
+    const isLogin = this.state.isLogin;
+    if(isLogin === true){
+      Cookie.deleteCookie('token');
+    }
     this.setState({
-      toDoWoogles: data.filter(e=> e.woogle === 'toDoWoogles'),
-      URLWoogles: data.filter(e=> e.woogle === 'URLWoogles'),
+      isLogin :  !isLogin,
     });
   }
 
-componentDidMount = () =>{
-  WoogleAxios.getWooglesAxios('/woogle', this.getCallback);
-}
-  
+  isLogin = () =>{
+    if(this.state.isLogin === true &&  Cookie.getCookie('token') !== null){
+      return true;
+    }
+    else return false;
+  }
+
   render(){
+    
     return (
-      <div className="app">
-        <Board toDoWoogles={this.state.toDoWoogles} 
-                URLWoogles={this.state.URLWoogles} 
+        
+        <div className="app">
+            <BrowserRouter>
+            <Switch>
+            <Route path={"/woogle"} render={()=>
+               <Board 
+                isLogin={this.isLogin}
                 wdata={this.state.wdata}
-               addWoogle={(title, contents, selectedName)=>this.addWoogle(title, contents, selectedName)}
-               deleteWoogle={(woogle) =>this.deleteWoogle(woogle)}/>
-      </div>
+                addWoogle={(title, contents, selectedName)=>this.addWoogle(title, contents, selectedName)}
+                deleteWoogle={(woogle) =>this.deleteWoogle(woogle)} 
+                getCallback={this.getCallback}
+                setLogin={this.setLogin}
+                />
+            }>
+            </Route>
+            <Route exact path={"/"} render={()=>  
+                 <Login isLogin={this.isLogin} setLogin={this.setLogin}/>
+            }>
+            </Route>
+            </Switch>
+            </BrowserRouter>
+        </div>
+    
       );
   }
 }
+
+
 
 export default App;
