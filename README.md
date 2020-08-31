@@ -23,7 +23,7 @@ http://woogle-bucket.s3-website.ap-northeast-2.amazonaws.com/
 ## Issue
  * Geolocation API의 위치관련 정보는 인증서가 적용된 https 웹에서 적용가능.
 ## 구동
-<img src="woogleShot/main.PNG" width="400" height="300"></img>
+<img src="woogleShot/main.PNG" width="200" height="300"></img>
 
 <img src="woogleShot/main2.PNG" width="400" height="300"></img>
 
@@ -31,5 +31,5 @@ http://woogle-bucket.s3-website.ap-northeast-2.amazonaws.com/
 
 <img src="woogleShot/detail.PNG" width="400" height="300"></img>
 
-<img src="woogleShot/smallWin.PNG" width="400" height="300"></img>
+<img src="woogleShot/smallWin.PNG" width="200" height="300"></img>
 
