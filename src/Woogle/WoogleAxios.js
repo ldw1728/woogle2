@@ -7,7 +7,7 @@ import axios from 'axios';
             },
             url : '/woogle'+url,
             method : 'post',
-            baseURL : 'http://13.209.44.126:9000',
+            baseURL : 'http://35.247.85.234:9000',
             data : JSON.stringify({email:email, password:password,}),
         }
         ).then(response=>{
@@ -25,7 +25,7 @@ import axios from 'axios';
                 },
                 url: '/woogle/user' + url,
                 method: 'get',
-                baseURL: 'http://13.209.44.126:9000',
+                baseURL: 'http://35.247.85.234:9000',
                 withCredentials: true
             }
         ).then(response=>{
@@ -45,7 +45,7 @@ import axios from 'axios';
                 url: '/woogle/user' + url,
                 method: method,
                 data: JSON.stringify(woogle),
-                baseURL: 'http://13.209.44.126:9000',
+                baseURL: 'http://35.247.85.234:9000',
                 withCredentials: true
             }
         ).then(response=>{
