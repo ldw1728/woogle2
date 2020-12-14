@@ -1,7 +1,7 @@
 # ToDoList(WoogleWoogle)
 ## 내용
 reactJS와 SpringMVC을 이용한 간단한 웹애플리케이션
-http://woogle-bucket.s3-website.ap-northeast-2.amazonaws.com/
+http://woogle.s3-website.ap-northeast-2.amazonaws.com
 
 ## 기술
  * frontend = AWS S3 / ReactJS 16.14.1 (Router) / material-ui / Axios
