@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/woogle2/static/css/main.20984921.chunk.css",
-    "main.js": "/woogle2/static/js/main.ba655434.chunk.js",
-    "main.js.map": "/woogle2/static/js/main.ba655434.chunk.js.map",
+    "main.js": "/woogle2/static/js/main.01e24838.chunk.js",
+    "main.js.map": "/woogle2/static/js/main.01e24838.chunk.js.map",
     "runtime-main.js": "/woogle2/static/js/runtime-main.fc07341d.js",
     "runtime-main.js.map": "/woogle2/static/js/runtime-main.fc07341d.js.map",
     "static/js/2.b560c0a0.chunk.js": "/woogle2/static/js/2.b560c0a0.chunk.js",
     "static/js/2.b560c0a0.chunk.js.map": "/woogle2/static/js/2.b560c0a0.chunk.js.map",
     "index.html": "/woogle2/index.html",
-    "precache-manifest.07d560894716c218949e309c87eacbf9.js": "/woogle2/precache-manifest.07d560894716c218949e309c87eacbf9.js",
+    "precache-manifest.acff9c60ec7fe4ca62519c01c53bed7d.js": "/woogle2/precache-manifest.acff9c60ec7fe4ca62519c01c53bed7d.js",
     "service-worker.js": "/woogle2/service-worker.js",
     "static/css/main.20984921.chunk.css.map": "/woogle2/static/css/main.20984921.chunk.css.map",
     "static/js/2.b560c0a0.chunk.js.LICENSE.txt": "/woogle2/static/js/2.b560c0a0.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fc07341d.js",
     "static/js/2.b560c0a0.chunk.js",
     "static/css/main.20984921.chunk.css",
-    "static/js/main.ba655434.chunk.js"
+    "static/js/main.01e24838.chunk.js"
   ]
 }
