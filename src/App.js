@@ -41,14 +41,14 @@ class App extends React.Component {
   getWeatherData = (position) => {
     var url='';
     if(position !== undefined){
-       url = 'http://api.openweathermap.org/data/2.5/weather?'
+       url = 'https://api.openweathermap.org/data/2.5/weather?'
         + 'lat='
         + position.coords.latitude
         + '&lon='
         + position.coords.longitude
         + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
     }else{
-      url = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr'
+      url = 'https://api.openweathermap.org/data/2.5/weather?q=Seoul,kr'
     + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
     }
     WoogleAxios.getWeatherJSON(url, data=>{
