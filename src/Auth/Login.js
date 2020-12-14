@@ -23,22 +23,24 @@ import { withRouter } from 'react-router';
     const onHandleSubmit = (e) =>{
         e.preventDefault();
 
-        if(emailValue === '' || passwordValue === ''){
-            alert('이메일과 패스워드 모두 입력해주세요!');
-            return;
+        if(btnValue === '비 로그인으로 접속'){
+            loginRequest('test@gmail.com', '123456');
+        }else{
+            if(emailValue === '' || passwordValue === ''){
+                alert('이메일과 패스워드 모두 입력해주세요!');
+                return;
+            }
+    
+            if(btnValue === 'SIGNIN'){
+                loginRequest(emailValue, passwordValue);
+            }
+            else if(btnValue === 'SIGNUP'){
+                joinRequest();
+            }
         }
-
-        if(btnValue === 'SIGNIN'){
-            loginRequest();
-        }
-        else{
-            joinRequest();
-        }
-
-        
     }
 
-    const loginRequest = () => {
+    const loginRequest = (emailValue, passwordValue) => {
         sendUserInfo('/login', emailValue, passwordValue, (data)=>{
             Cookie.setCookie("token", data);
             props.setLogin();
@@ -95,6 +97,9 @@ import { withRouter } from 'react-router';
                     <Button className="signIn" type="submit" onClick={onClickBtn}>SignIn</Button>
                     <Button className="signIn" type="submit" onClick={onClickBtn}>SignUp</Button>
                 </ButtonGroup>
+                <br/>
+                <br/>
+                <Button className="noLogin" size='small' variant='outlined' type="submit" onClick={onClickBtn}>비 로그인으로 접속</Button>
                 </div>
             </form>
         </div>

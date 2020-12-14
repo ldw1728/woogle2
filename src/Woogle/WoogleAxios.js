@@ -5,7 +5,7 @@ import axios from 'axios';
             headers : {
                 'Content-Type': 'application/json',
             },
-            url : '/woogle'+url,
+            url : url,
             method : 'post',
             baseURL : 'http://35.247.85.234:9000',
             data : JSON.stringify({email:email, password:password,}),
@@ -23,7 +23,7 @@ import axios from 'axios';
                 headers : {
                     'x-auth-token' : token,
                 },
-                url: '/woogle/user' + url,
+                url: '/user' + url,
                 method: 'get',
                 baseURL: 'http://35.247.85.234:9000',
                 withCredentials: true
@@ -42,7 +42,7 @@ import axios from 'axios';
                     'x-auth-token' : token,
                     'Content-Type': 'application/json'
                 },
-                url: '/woogle/user' + url,
+                url: '/user' + url,
                 method: method,
                 data: JSON.stringify(woogle),
                 baseURL: 'http://35.247.85.234:9000',

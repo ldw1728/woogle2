@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
 import Board from './Board.js';
 import './App.css';
@@ -30,7 +29,6 @@ class App extends React.Component {
        },
        (error)=>{
         console.log(error.message);
-        alert('사용자의 위치를 알 수 없습니다.');
         this.getWeatherData();
        });
     }else{
@@ -41,14 +39,14 @@ class App extends React.Component {
   getWeatherData = (position) => {
     var url='';
     if(position !== undefined){
-       url = 'https://api.openweathermap.org/data/2.5/weather?'
+       url = 'http://api.openweathermap.org/data/2.5/weather?'
         + 'lat='
         + position.coords.latitude
         + '&lon='
         + position.coords.longitude
         + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
     }else{
-      url = 'https://api.openweathermap.org/data/2.5/weather?q=Seoul,kr'
+      url = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr'
     + '&appid=ff737b74d85df9939ff990b7dc8c82bb';
     }
     WoogleAxios.getWeatherJSON(url, data=>{
@@ -104,7 +102,5 @@ class App extends React.Component {
       );
   }
 }
-
-
 
 export default App;
