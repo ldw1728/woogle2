@@ -2,7 +2,7 @@
 ## 내용
 reactJS와 SpringMVC을 이용한 간단한 웹애플리케이션    
     
-현재 잠시 접속 불가 ~~http://woogle.s3-website.ap-northeast-2.amazonaws.com~~
+ ~~http://woogle.s3-website.ap-northeast-2.amazonaws.com~~ (aws 관련 문제로 잠시 접속 불가) 
 
 ## 기술
  * frontend = AWS S3 / ReactJS 16.14.1 (Router) / material-ui / Axios
